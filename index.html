@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Planeta Terra | Unity3D</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Efeito de Estrelas Simples */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 10vw 20vh white, 30vw 50vh white, 70vw 10vh white, 85vw 80vh white, 40vw 90vh white;
+            opacity: 0.5;
+        }
+
+        .container {
+            z-index: 1;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+        }
+
+        .earth-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: spin 10s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            color: white;
+            background: #fa5c5c;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(250, 92, 92, 0.4);
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #ff7675;
+            box-shadow: 0 6px 20px rgba(250, 92, 92, 0.6);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="earth-icon">🌍</div>
+        <h1>Planeta Terra</h1>
+        <p>Explore a simulação interativa criada em Unity3D. Uma jornada visual pelo nosso sistema solar.</p>
+        
+        <a href="https://pedrocorreia.itch.io/sistema-solar" target="_blank" class="btn">
+            ACESSAR NO ITCH.IO
+        </a>
+    </div>
+
+    <footer>
+        Desenvolvido por Pedro Correia &copy; 2024
+    </footer>
+
+</body>
+</html>
