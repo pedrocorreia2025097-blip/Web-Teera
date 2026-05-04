@@ -3,113 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Planeta Terra | Unity3D</title>
+    <title>Projeto Sistema Solar | Unity3D</title>
     <style>
-        /* Reset básico */
+        /* Reset e Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            background: radial-gradient(circle at center, #1b2735 0%, #050505 100%);
             color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
-            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
         }
 
-        /* Efeito de Estrelas Simples */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            box-shadow: 10vw 20vh white, 30vw 50vh white, 70vw 10vh white, 85vw 80vh white, 40vw 90vh white;
-            opacity: 0.5;
+        /* Efeito de Estrelas ao fundo */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 0;
+            pointer-events: none;
         }
 
+        /* Container Principal */
         .container {
             z-index: 1;
-            padding: 20px;
-            max-width: 600px;
+            max-width: 800px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 2px;
             background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
             color: #bdc3c7;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        .earth-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: spin 10s linear infinite;
-            display: inline-block;
+        /* Estilização do Iframe */
+        .widget-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            color: white;
-            background: #fa5c5c;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(250, 92, 92, 0.4);
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            background: #ff7675;
-            box-shadow: 0 6px 20px rgba(250, 92, 92, 0.6);
+        iframe {
+            max-width: 100%;
         }
 
         footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.8rem;
-            color: #7f8c8d;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #555;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
 
+    <div class="stars"></div>
+
     <div class="container">
-        <div class="earth-icon">🌍</div>
-        <h1>Planeta Terra</h1>
-        <p>Explore a simulação interativa criada em Unity3D. Uma jornada visual pelo nosso sistema solar.</p>
-        
-        <a href="https://pedrocorreia.itch.io/sistema-solar" target="_blank" class="btn">
-            ACESSAR NO ITCH.IO
-        </a>
+        <h1>Sistema Solar</h1>
+        <p>Explore a imensidão do espaço através desta simulação interativa desenvolvida em <strong>Unity3D</strong>. 
+        Conheça os planetas e a dinâmica do nosso sistema de forma imersiva.</p>
+
+        <div class="widget-container">
+            <iframe frameborder="0" src="https://itch.io/embed/4541362" width="552" height="167">
+                <a href="https://pedrocorreia.itch.io/sistema-solar">Sistema Solar by pedrocorreia</a>
+            </iframe>
+        </div>
     </div>
 
     <footer>
-        Desenvolvido por Pedro Correia &copy; 2024
+        Pedro Correia &copy; 2026 | Desenvolvido com Unity3D
     </footer>
 
 </body>
